@@ -3,59 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Select Survey Language</title>
+  <title>Survey</title>
   <style>
-    * {
-      box-sizing: border-box;
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #333;
+      font-family: 'Playfair Display', serif;
     }
-    body {
-      font-family: Arial, sans-serif;
+    iframe {
+      display: block;
+      border: none;
+      height: 80%;
+      width: 100%;
+    }
+    .header {
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      font-size: 3rem;
+      color: #f0f0f0;
       text-align: center;
-      background-color: #fafafa;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
+      z-index: 10;
     }
-    h1 {
-      font-size: 36px;
-      color: #333;
-      margin-bottom: 50px;
-    }
-    .container {
-      width: 90%;
-      max-width: 600px;
-    }
-    a {
-      display: inline-block;
-      margin: 10px;
-      padding: 20px;
-      background-color: #1d1d1d;
-      text-decoration: none;
+    .button {
+      padding: 0.5rem 2rem;
+      border-radius: 3rem;
+      border: none;
+      background-image: linear-gradient(45deg, #6ab7ff, #4d4dff);
       color: #fff;
-      font-size: 24px;
-      border-radius: 5px;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
       transition: all 0.3s ease;
     }
-    a:hover {
-      background-color: #333;
-      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+    }
+    .stars {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      opacity: 0.3;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Select Survey Language</h1>
-    <img src="https://raw.githubusercontent.com/adzafgjk/survey-kiosk/main/Adaman_Photoshoot_diverse_children_holding_light_bulbs_symboliz_4cbf5ac9-9c1c-44b1-91b4-5d8eee671a26.png" alt="Custom image" style="max-width: 100%; height: auto; margin-bottom: 50px;">
-
-    <a href="survey.html?language=english" target="_blank">Click here for English</a>
-<a href="survey.html?language=spanish" target="_blank">Haga clic aquí para Español</a>
-
+  <div class="stars"></div>
+  <div class="header">
+    GEORGE<br>
+    WILEY<br>
+    CENTER
   </div>
-</body>
-</html>
+  <iframe id="typeform-survey" src=""></iframe>
+  <script>
+    const surveyURLs = {
+      english: 'https://uk0tjas1h05.typeform.com/to/wIKLpx3g',
+      spanish: 'https://uk0tjas1h05.typeform.com/to/Krr4FOMo'
+    };
+    
