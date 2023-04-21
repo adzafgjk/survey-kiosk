@@ -67,3 +67,23 @@
       spanish: 'https://uk0tjas1h05.typeform.com/to/Krr4FOMo'
     };
     
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+const language = getParameterByName('language');
+const iframe = document.getElementById('typeform-survey');
+iframe.src = surveyURLs[language];
+
+function checkForImageAndRedirect() {
+  const thumbsUpImage = document.querySelector('img[src^="https://images.typeform.com/images/2dpnUBBkz2VN/image/default"]');
+  if (thumbsUpImage) {
+    window.location.href = 'https://adzafgjk.github.io/survey-kiosk/'; // Replace with your GitHub Pages URL
+  } else {
+   
