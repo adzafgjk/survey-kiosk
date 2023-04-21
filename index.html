@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Survey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     html, body {
       margin: 0;
       padding: 0;
@@ -14,33 +14,36 @@
       background-color: #333;
       font-family: 'Playfair Display', serif;
     }
-    .header {
-      position: absolute;
-      top: 5%;
-      left: 5%;
-      font-size: 4rem;
-      color: #f0f0f0;
-      text-align: center;
-      z-index: 10;
+    iframe {
+      display: block;
+      border: none;
+      height: 100%;
+      width: 100%;
     }
-    .survey-title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
+    .header {
       font-size: 3rem;
       color: #f0f0f0;
       text-align: center;
-      transform: translate(-50%, -50%);
+      z-index: 10;
+      margin-top: 10%;
+    }
+    .founder {
+      display: block;
+      max-width: 50%;
+      max-height: 50%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 2%;
+      margin-bottom: 2%;
     }
     .buttons {
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2%;
     }
     .button {
-      padding: 0.5rem 2rem;
       margin: 0 1rem;
+      padding: 0.5rem 2rem;
       border-radius: 3rem;
       border: none;
       background-image: linear-gradient(45deg, #6ab7ff, #4d4dff);
@@ -54,28 +57,22 @@
       transform: translateY(-3px);
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
     }
-    .stars {
-      position: fixed;
-      height: 100%;
-      width: 100%;
-      background: url('https://www.transparenttextures.com/patterns/stardust.png');
-      opacity: 0.3;
-    }
   </style>
 </head>
 <body>
-  <div class="stars"></div>
   <div class="header">
     GEORGE<br>
     WILEY<br>
     CENTER
   </div>
-  <div class="survey-title">
-    Illness Protection Survey
-  </div>
+  <img class="founder" src="https://github.com/adzafgjk/survey-kiosk/blob/main/output%20(2).png?raw=true" alt="Founder">
   <div class="buttons">
-    <a href="https://uk0tjas1h05.typeform.com/to/wIKLpx3g" target="_blank"><button class="button">English</button></a>
-    <a href="https://uk0tjas1h05.typeform.com/to/Krr4FOMo" target="_blank"><button class="button">Spanish</button></a>
+    <a href="https://uk0tjas1h05.typeform.com/to/wIKLpx3g">
+      <button class="button">English</button>
+    </a>
+    <a href="https://uk0tjas1h05.typeform.com/to/Krr4FOMo">
+      <button class="button">Español</button>
+    </a>
   </div>
 </body>
 </html>
