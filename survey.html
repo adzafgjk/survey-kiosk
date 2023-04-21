@@ -41,10 +41,12 @@
     const iframe = document.getElementById('typeform-survey');
     iframe.src = surveyURLs[language];
 
-    function checkForImageAndRedirect() {
-      const thumbsUpImage = document.querySelector('img[src^="https://images.typeform.com/images/2dpnUBBkz2VN/image/default"]');
-      if (thumbsUpImage) {
-        window.location.href = 'https://adzafgjk.github.io/survey-kiosk/'; // Replace with your GitHub Pages URL
+    function checkForImageOrTextAndRedirect() {
+  const thumbsUpImage = document.querySelector('img[src^="https://images.typeform.com/images/2dpnUBBkz2VN/image/default"]');
+  const textContent = document.documentElement.textContent;
+
+  if (thumbsUpImage || textContent.includes("Thanks for completing this typeform\nNow create your own — it's free, easy, & beautiful")) {
+    window.location.href = 'https://adzafgjk.github.io/survey-kiosk/'; // Replace with your GitHub Pages URL
       } else {
         setTimeout(checkForImageAndRedirect, 1000);
       }
