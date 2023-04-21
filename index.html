@@ -5,36 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Select Survey Language</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      padding-top: 50px;
-      background-color: #f0f0f0;
+      background-color: #fafafa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
     }
     h1 {
       font-size: 36px;
       color: #333;
-      margin-bottom: 30px;
+      margin-bottom: 50px;
+    }
+    .container {
+      width: 90%;
+      max-width: 600px;
     }
     a {
       display: inline-block;
       margin: 10px;
       padding: 20px;
-      background-color: #4CAF50;
+      background-color: #1d1d1d;
       text-decoration: none;
-      color: #FFF;
+      color: #fff;
       font-size: 24px;
       border-radius: 5px;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
     }
     a:hover {
-      background-color: #45a049;
+      background-color: #333;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
     }
   </style>
 </head>
 <body>
-  <h1>Select Survey Language</h1>
-  <a href="https://uk0tjas1h05.typeform.com/to/wIKLpx3g" target="_blank">Click here for English</a>
-  <a href="https://uk0tjas1h05.typeform.com/to/Krr4FOMo" target="_blank">Haga clic aquí para Español</a>
+  <div class="container">
+    <h1>Select Survey Language</h1>
+    <a href="https://uk0tjas1h05.typeform.com/to/wIKLpx3g" target="_blank">Click here for English</a>
+    <a href="https://uk0tjas1h05.typeform.com/to/Krr4FOMo" target="_blank">Haga clic aquí para Español</a>
+  </div>
 </body>
 </html>
