@@ -14,23 +14,33 @@
       background-color: #333;
       font-family: 'Playfair Display', serif;
     }
-    iframe {
-      display: block;
-      border: none;
-      height: 80%;
-      width: 100%;
-    }
     .header {
       position: absolute;
       top: 5%;
       left: 5%;
-      font-size: 3rem;
+      font-size: 4rem;
       color: #f0f0f0;
       text-align: center;
       z-index: 10;
     }
+    .survey-title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-size: 3rem;
+      color: #f0f0f0;
+      text-align: center;
+      transform: translate(-50%, -50%);
+    }
+    .buttons {
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
     .button {
       padding: 0.5rem 2rem;
+      margin: 0 1rem;
       border-radius: 3rem;
       border: none;
       background-image: linear-gradient(45deg, #6ab7ff, #4d4dff);
@@ -51,13 +61,6 @@
       background: url('https://www.transparenttextures.com/patterns/stardust.png');
       opacity: 0.3;
     }
-    .buttons-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      gap: 2rem;
-    }
   </style>
 </head>
 <body>
@@ -67,9 +70,12 @@
     WILEY<br>
     CENTER
   </div>
-  <div class="buttons-container">
-    <button class="button" onclick="window.location.href='https://uk0tjas1h05.typeform.com/to/wIKLpx3g'">English</button>
-    <button class="button" onclick="window.location.href='https://uk0tjas1h05.typeform.com/to/Krr4FOMo'">Spanish</button>
+  <div class="survey-title">
+    Illness Protection Survey
+  </div>
+  <div class="buttons">
+    <a href="https://uk0tjas1h05.typeform.com/to/wIKLpx3g" target="_blank"><button class="button">English</button></a>
+    <a href="https://uk0tjas1h05.typeform.com/to/Krr4FOMo" target="_blank"><button class="button">Spanish</button></a>
   </div>
 </body>
 </html>
