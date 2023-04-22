@@ -121,41 +121,51 @@
   const sendButton = document.getElementById('send-button');
 
   sendButton.addEventListener('click', async () => {
-  const userMessage = messageInput.value.trim();
-  if (userMessage) {
-    addMessageToChat('user-message', userMessage);
-    messageInput.value = '';
+    const userMessage = messageInput.value.trim();
+    if (userMessage) {
+      addMessageToChat('user-message', userMessage);
+      messageInput.value = '';
 
-    const chatbotApiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
-    const api_key = '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';
+      const chatbotApiUrl = 'https://api.openai.com/v1/engines/davinci-codex/completions';
+      const api_key = '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';
 
-    try {
-      const response = await fetch(chatbotApiUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${api_key}`,
-        },
-        body: JSON.stringify({
-          prompt: userMessage,
-          max_tokens: 50,
-          n: 1,
-          stop: null,
-          temperature: 0.8,
-        }),
-      });
+      try {
+        const response = await fetch(chatbotApiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${api_key}`,
+          },
+          body: JSON.stringify({
+            prompt: userMessage,
+            max_tokens: 50,
+            n: 1,
+            stop: null,
+            temperature: 0.8,
+          }),
+        });
 
-      if (response.ok) {
-        const jsonResponse = await response.json();
-        const chatbotResponse = jsonResponse.choices[0].text.trim();
-        addMessageToChat('chatbot-message', chatbotResponse);
-      } else {
-        console.error('Error fetching ChatGPT API:', response.status, response.statusText);
+        if (response.ok) {
+          const jsonResponse = await response.json();
+          const chatbotResponse = jsonResponse.choices[0].text.trim();
+          addMessageToChat('chatbot-message', chatbotResponse);
+        } else {
+          console.error('Error fetching ChatGPT API:', response.status, response.statusText);
+        }
+      } catch (error) {
+        console.error('Error calling ChatGPT API:', error);
       }
-    } catch (error) {
-      console.error('Error calling ChatGPT API:', error);
     }
-</script>
+  });
 
+  function addMessageToChat(cssClass, message) {
+    const messageElement = document.createElement('p');
+    messageElement.className = cssClass + ' chat-message';
+    messageElement.textContent = message;
+    chatContainer.appendChild(messageElement);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+</script>
 </body>
 </html>
+
