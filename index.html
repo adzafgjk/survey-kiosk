@@ -95,18 +95,52 @@
     GEORGE<br>
     WILEY<br>
     CENTER
-  </div>
-  <img class="founder" src="https://github.com/adzafgjk/survey-kiosk/blob/main/output%20(2).png?raw=true" alt="Founder">
-  <div class="survey-title">
+</div>
+<img class="founder" src="https://github.com/adzafgjk/survey-kiosk/blob/main/output%20(2).png?raw=true" alt="Founder">
+<div class="survey-title">
     Illness Protection Survey
-  </div>
-  <div class="buttons">
+</div>
+<div class="buttons">
     <a href="https://uk0tjas1h05.typeform.com/to/wIKLpx3g">
-      <button class="button">English</button>
+        <button class="button">English</button>
     </a>
     <a href="https://uk0tjas1h05.typeform.com/to/Krr4FOMo">
-      <button class="button">Español</button>
+        <button class="button">Español</button>
     </a>
-  </div>
+</div>
+<div class="chat-container" id="chat-container">
+</div>
+<div class="message-input">
+    <input type="text" id="message-input" placeholder="Type your message here...">
+    <button class="button" id="send-button">Send</button>
+</div>
+
+<script>
+  const chatContainer = document.getElementById('chat-container');
+  const messageInput = document.getElementById('message-input');
+  const sendButton = document.getElementById('send-button');
+
+  sendButton.addEventListener('click', () => {
+    const userMessage = messageInput.value.trim();
+    if (userMessage) {
+      addMessageToChat('user-message', userMessage);
+      messageInput.value = '';
+
+      // You should replace this with a call to your chatbot API
+      // to get the actual chatbot response
+      const chatbotResponse = "Chatbot response goes here";
+      addMessageToChat('chatbot-message', chatbotResponse);
+    }
+  });
+
+  function addMessageToChat(cssClass, message) {
+    const messageElement = document.createElement('p');
+    messageElement.className = cssClass + ' chat-message';
+    messageElement.textContent = message;
+    chatContainer.appendChild(messageElement);
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+  }
+</script>
+
 </body>
 </html>
