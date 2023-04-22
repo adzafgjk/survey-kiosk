@@ -147,7 +147,9 @@
 
         if (response.ok) {
           const jsonResponse = await response.json();
+          console.log(jsonResponse);
           const chatbotResponse = jsonResponse.choices[0].text.trim();
+          console.log(chatbotResponse);
           addMessageToChat('chatbot-message', chatbotResponse);
         } else {
           console.error('Error fetching ChatGPT API:', response.status, response.statusText);
@@ -168,4 +170,5 @@
 </script>
 </body>
 </html>
+
 
