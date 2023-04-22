@@ -14,12 +14,6 @@
       background-color: #333;
       font-family: 'Playfair Display', serif;
     }
-    iframe {
-      display: block;
-      border: none;
-      height: 100%;
-      width: 100%;
-    }
     .header {
       font-size: 3rem;
       color: #f0f0f0;
@@ -63,6 +57,37 @@
       transform: translateY(-3px);
       box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
     }
+    .chat-container {
+      max-height: 300px;
+      overflow-y: auto;
+      background-color: #f0f0f0;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 10px;
+    }
+    .message-input {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2%;
+    }
+    input[type="text"] {
+      width: 80%;
+      padding: 0.5rem;
+      border-radius: 10px;
+      border: 2px solid #6ab7ff;
+    }
+    .chat-message {
+      margin-bottom: 0.5rem;
+      word-wrap: break-word;
+    }
+    .user-message {
+      color: #000;
+      text-align: right;
+    }
+    .chatbot-message {
+      color: #000;
+      text-align: left;
+    }
   </style>
 </head>
 <body>
@@ -71,17 +96,5 @@
     WILEY<br>
     CENTER
   </div>
-  <img class="founder" src="https://github.com/adzafgjk/survey-kiosk/blob/main/output%20(2).png?raw=true" alt="Founder">
-  <div class="survey-title">
-    Illness Protection Survey
-  </div>
-  <div class="buttons">
-    <a href="https://uk0tjas1h05.typeform.com/to/wIKLpx3g">
-      <button class="button">English</button>
-    </a>
-    <a href="https://uk0tjas1h05.typeform.com/to/Krr4FOMo">
-      <button class="button">Español</button>
-    </a>
-  </div>
-</body>
-</html>
+  <img class="founder" src="https://github.com/adzafgjk/survey-kiosk/blob/main/output%20(2).
+
